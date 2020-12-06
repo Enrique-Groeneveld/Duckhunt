@@ -1,13 +1,14 @@
 var directions = ["N","NE", "E", "SE", "S", "SW", "W", "NW"]
 var posLeft = 750;
 var posTop = 370;
-					var hitcount3 = 20;
-
+var hitcount3 = 20;
+var timerclock= 500;
 var hitcount = 0;
 var hitcount2 = 0;
 var duck= document.getElementById("duck")
-wacht()
+var container= document.getElementById("container")
 
+wacht()
 
 function moveDuck(){
 	
@@ -86,7 +87,12 @@ console.log(posLeft)
 		duck.style.top = posTop + "px";
 	}
 
-
+	if(hitcount3 == 0){
+		
+		ending()
+		
+		 
+	}
 	
 
 }
@@ -103,7 +109,7 @@ console.log(posLeft)
 function wacht(){
 setInterval(function(){
   moveDuck()
-}, 500		); 
+}, timerclock); 
 }
 
 	function reset(){
@@ -143,3 +149,12 @@ function shots(){
 
 
 }
+  function ending(){
+  	alert("het spel is afgelopen, als u het opnieuw wilt spelen moet u de pagina verversen.")
+		timerclock==60000
+		duck.style.height=0
+		duck.style.width=0
+		
+
+
+  }
